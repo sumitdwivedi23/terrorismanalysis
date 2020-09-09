@@ -202,8 +202,18 @@ def create_app_ui():
             "primary": "black",
             "background": "orange"
             }),
-  html.Div(id = "graph-object", children ="Wait Graph Map Is Loading"),
-  html.H6('By: Sumit Dhar Dwivedi with Forsk Coding School', id='Mains_title',style={'textAlign': 'center','color': 'black' }),])
+   html.Div(
+        dcc.Loading(
+            id='graph-object',
+            type="default",
+            #children=html.Div(id="loading-output-1",)
+            children = ["World Map is loading"]
+        ),
+     
+      ),
+  html.H6('By: Sumit Dhar Dwivedi with Forsk Coding School', id='Mains_title',style={'textAlign': 'center','color': 'black' }),
+  
+  ],)
 
   return main_layout
 
